@@ -1,21 +1,21 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: heart-animation-ingress
-  namespace: heart-animation
+  name: snake-game
+  namespace: snake-game
   labels:
-    app: heart-animation
+    app: snake-game
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: heart-animation.local
+    - host: snake-game.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: heart-animation-service
+                name: snake-game-service
                 port:
                   number: 8080

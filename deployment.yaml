@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: heart-animation
-  namespace: heart-animation
+  name: snake-game
+  namespace: snake-game
   labels:
-    app: heart-animation
+    app: snake-game
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: heart-animation
+      app: snake-game
   template:
     metadata:
       labels:
-        app: heart-animation
+        app: snake-game
     spec:
       imagePullSecrets:
       - name: nexus-docker-secret # Tham chiếu đến Secret đã tạo
       containers:
-      - name: heart-animation
-        image: 192.168.2.83:5000/docker/heart-animation:0.0.1 # Image từ Nexus
+      - name: snake-game
+        image: 192.168.2.83:5000/docker/snake-game:0.0.1 # Image từ Nexus
         ports:
         - containerPort: 8080
         env:

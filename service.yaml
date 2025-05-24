@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: heart-animation-service
-  namespace: heart-animation
+  name: snake-game-service
+  namespace: nake-game
   labels:
-    app: heart-animation
+    app: nake-game
 spec:
   type: ClusterIP
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: heart-animation
+    app: nake-game
